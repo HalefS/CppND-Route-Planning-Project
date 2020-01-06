@@ -28,6 +28,14 @@ find_package(io2d REQUIRED)
 find_package(Cairo)
 find_package(GraphicsMagick)
 
+# Add project executable
+add_executable(OSM_A_star_search src/main.cpp src/model.cpp src/render.cpp src/route_model.cpp src/route_planner.cpp)
+
+target_link_libraries(OSM_A_star_search
+    PRIVATE io2d::io2d
+    PUBLIC pugixml
+)
+
 #
 # Add Build Targets
 #
