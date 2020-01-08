@@ -14,20 +14,40 @@ RouteModel::RouteModel(const std::vector<std::byte> &xml) : Model(xml) {
 
 void RouteModel::CreateNodeToRoadHashMap() {
   auto roads = this->Roads();
-    for(Model::Road const &road : roads) {
+  auto ways = this->Ways();
+    for(const Model::Road &road : roads) {
         if(road.type != Model::Road::Type::Footway) {
           auto counter = 0;
-          for(int way : this->Ways()[road.way].nodes) {
-              // if current road is not present in node_to_road, set value as
-              // empty vactor of pointers and push a pointer to the current road(this)
-              // to the back of the vector
-            if(node_to_road.find(way) == node_to_road.end()) {
-              node_to_road[way] = std::vector<const Model::Road*>{};
-              node_to_road[way].push_back(&road);
+          for(int node_idx : ways[road.way].nodes) {
+            if(node_to_road.find(node_idx) == node_to_road.end()) {
+              node_to_road[node_idx] = std::vector<const Model::Road*>();
             }
+            node_to_road[node_idx].push_back(&road);
           }
 
         }
 
+    }
+}
+
+RouteModel::Node* RouteModel::Node::FindNeighbor(std::vector<int> node_indices) {
+  Node* closestNode = nullptr;
+  Node node;
+  for(int index : node_indices) {
+      node = parent_model->SNodes()[index];
+      if(this->distance(node) != 0 && !node.visited) {
+        if(closestNode == nullptr || this->distance(node) < this->distance(*closestNode))
+            closestNode = &node;
+      }
+  }
+  return closestNode;
+}
+
+// Populate the neighbors vector in the Node class with all the connected nodes
+void RouteModel::Node::FindNeighbors() {
+    for(auto &road : parent_model->node_to_road[this->index]) {
+      RouteModel::Node* potential_neighbor = this->FindNeighbor(parent_model->Ways()[road->way].nodes);
+      if (potential_neighbor)
+        this->neighbors.push_back(potential_neighbor);
     }
 }

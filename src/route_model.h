@@ -24,10 +24,12 @@ class RouteModel : public Model {
 
         Node(){}
         Node(int idx, RouteModel *search_model, Model::Node node) : Model::Node(node), parent_model(search_model), index(idx) {}
+        void FindNeighbors();
 
       private:
         int index;
         RouteModel* parent_model = nullptr;
+        RouteModel::Node* FindNeighbor(std::vector<int> node_indices);
 
         void CreateNodeToRoadHashMap();
 
