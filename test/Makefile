@@ -171,32 +171,32 @@ test/fast:
 	cd /home/georgia/Desktop/Hustle/CppND-Route-Planning-Project && $(MAKE) -f test/CMakeFiles/test.dir/build.make test/CMakeFiles/test.dir/build
 .PHONY : test/fast
 
-utest_rm_hashmap.o: utest_rm_hashmap.cpp.o
+utest_rm_find_closest_node.o: utest_rm_find_closest_node.cpp.o
 
-.PHONY : utest_rm_hashmap.o
+.PHONY : utest_rm_find_closest_node.o
 
 # target to build an object file
-utest_rm_hashmap.cpp.o:
-	cd /home/georgia/Desktop/Hustle/CppND-Route-Planning-Project && $(MAKE) -f test/CMakeFiles/test.dir/build.make test/CMakeFiles/test.dir/utest_rm_hashmap.cpp.o
-.PHONY : utest_rm_hashmap.cpp.o
+utest_rm_find_closest_node.cpp.o:
+	cd /home/georgia/Desktop/Hustle/CppND-Route-Planning-Project && $(MAKE) -f test/CMakeFiles/test.dir/build.make test/CMakeFiles/test.dir/utest_rm_find_closest_node.cpp.o
+.PHONY : utest_rm_find_closest_node.cpp.o
 
-utest_rm_hashmap.i: utest_rm_hashmap.cpp.i
+utest_rm_find_closest_node.i: utest_rm_find_closest_node.cpp.i
 
-.PHONY : utest_rm_hashmap.i
+.PHONY : utest_rm_find_closest_node.i
 
 # target to preprocess a source file
-utest_rm_hashmap.cpp.i:
-	cd /home/georgia/Desktop/Hustle/CppND-Route-Planning-Project && $(MAKE) -f test/CMakeFiles/test.dir/build.make test/CMakeFiles/test.dir/utest_rm_hashmap.cpp.i
-.PHONY : utest_rm_hashmap.cpp.i
+utest_rm_find_closest_node.cpp.i:
+	cd /home/georgia/Desktop/Hustle/CppND-Route-Planning-Project && $(MAKE) -f test/CMakeFiles/test.dir/build.make test/CMakeFiles/test.dir/utest_rm_find_closest_node.cpp.i
+.PHONY : utest_rm_find_closest_node.cpp.i
 
-utest_rm_hashmap.s: utest_rm_hashmap.cpp.s
+utest_rm_find_closest_node.s: utest_rm_find_closest_node.cpp.s
 
-.PHONY : utest_rm_hashmap.s
+.PHONY : utest_rm_find_closest_node.s
 
 # target to generate assembly for a file
-utest_rm_hashmap.cpp.s:
-	cd /home/georgia/Desktop/Hustle/CppND-Route-Planning-Project && $(MAKE) -f test/CMakeFiles/test.dir/build.make test/CMakeFiles/test.dir/utest_rm_hashmap.cpp.s
-.PHONY : utest_rm_hashmap.cpp.s
+utest_rm_find_closest_node.cpp.s:
+	cd /home/georgia/Desktop/Hustle/CppND-Route-Planning-Project && $(MAKE) -f test/CMakeFiles/test.dir/build.make test/CMakeFiles/test.dir/utest_rm_find_closest_node.cpp.s
+.PHONY : utest_rm_find_closest_node.cpp.s
 
 # Help Target
 help:
@@ -211,9 +211,9 @@ help:
 	@echo "... install/local"
 	@echo "... rebuild_cache"
 	@echo "... install"
-	@echo "... utest_rm_hashmap.o"
-	@echo "... utest_rm_hashmap.i"
-	@echo "... utest_rm_hashmap.s"
+	@echo "... utest_rm_find_closest_node.o"
+	@echo "... utest_rm_find_closest_node.i"
+	@echo "... utest_rm_find_closest_node.s"
 .PHONY : help
 
 

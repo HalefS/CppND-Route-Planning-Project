@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "../build/test"
   "../build/test.pdb"
-  "CMakeFiles/test.dir/utest_rm_hashmap.cpp.o"
+  "CMakeFiles/test.dir/utest_rm_find_closest_node.cpp.o"
 )
 
 # Per-language clean rules from dependency scanning.

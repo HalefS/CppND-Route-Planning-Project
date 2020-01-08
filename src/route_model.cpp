@@ -26,7 +26,6 @@ void RouteModel::CreateNodeToRoadHashMap() {
           }
 
         }
-
     }
 }
 
@@ -37,7 +36,7 @@ RouteModel::Node* RouteModel::Node::FindNeighbor(std::vector<int> node_indices) 
       node = parent_model->SNodes()[index];
       if(this->distance(node) != 0 && !node.visited) {
         if(closestNode == nullptr || this->distance(node) < this->distance(*closestNode))
-            closestNode = &node;
+            closestNode = &parent_model->SNodes()[index];
       }
   }
   return closestNode;
@@ -50,4 +49,30 @@ void RouteModel::Node::FindNeighbors() {
       if (potential_neighbor)
         this->neighbors.push_back(potential_neighbor);
     }
+}
+
+// Adjust the user input from the user for the closest available node on the model data
+RouteModel::Node& RouteModel::FindClosestNode(float x, float y) {
+    RouteModel::Node tempNode;
+    tempNode.x = x;
+    tempNode.y = y;
+    float min_dist = std::numeric_limits<float>::max();
+    float dist;
+    int closest_indx;
+    // Iterave over all rads in the model
+    for(const Model::Road &road : Roads()) {
+      if(road.type != Model::Road::Type::Footway) {
+        // Iterate over all node indices that belong to this particular road (not footway)
+        // and get the closest using distance method
+          for(int indx : this->Ways()[road.way].nodes) {
+            dist = tempNode.distance(SNodes()[indx]);
+            if(dist < min_dist) {
+              min_dist = dist;
+              closest_indx = indx;
+            }
+          }
+      }
+    }
+    // return node from vector SNodes() with index of closest one
+    return this->SNodes()[closest_indx];
 }
