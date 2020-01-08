@@ -79,6 +79,7 @@ int main(int argc, const char **argv)
 }
 
 bool getCoordinates(float &start_x, float &start_y, float &end_x, float &end_y) {
+  // get cordinates from the user
   std::vector<float> coordinates{};
   std::cout << "Please enter start_x :" << std::endl;
   std::cin >> start_x;
@@ -92,6 +93,7 @@ bool getCoordinates(float &start_x, float &start_y, float &end_x, float &end_y) 
   coordinates.push_back(start_y);
   coordinates.push_back(end_x);
   coordinates.push_back(end_y);
+  // Input validation
   for(float &value : coordinates) {
     if(value < 0 || value > 100) {
       std::cout << "Invalid coordinates, please enter values > 0 and < 100" << std::endl;

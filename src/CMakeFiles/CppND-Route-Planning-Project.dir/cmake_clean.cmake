@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "../bin/CppND-Route-Planning-Project"
-  "../bin/CppND-Route-Planning-Project.pdb"
+  "../build/CppND-Route-Planning-Project"
+  "../build/CppND-Route-Planning-Project.pdb"
   "CMakeFiles/CppND-Route-Planning-Project.dir/main.cpp.o"
   "CMakeFiles/CppND-Route-Planning-Project.dir/model.cpp.o"
   "CMakeFiles/CppND-Route-Planning-Project.dir/render.cpp.o"
