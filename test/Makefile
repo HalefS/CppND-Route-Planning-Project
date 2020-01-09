@@ -171,32 +171,32 @@ test/fast:
 	cd /home/georgia/Desktop/Hustle/CppND-Route-Planning-Project && $(MAKE) -f test/CMakeFiles/test.dir/build.make test/CMakeFiles/test.dir/build
 .PHONY : test/fast
 
-utest_rm_find_closest_node.o: utest_rm_find_closest_node.cpp.o
+utest_rp_a_star_stub.o: utest_rp_a_star_stub.cpp.o
 
-.PHONY : utest_rm_find_closest_node.o
+.PHONY : utest_rp_a_star_stub.o
 
 # target to build an object file
-utest_rm_find_closest_node.cpp.o:
-	cd /home/georgia/Desktop/Hustle/CppND-Route-Planning-Project && $(MAKE) -f test/CMakeFiles/test.dir/build.make test/CMakeFiles/test.dir/utest_rm_find_closest_node.cpp.o
-.PHONY : utest_rm_find_closest_node.cpp.o
+utest_rp_a_star_stub.cpp.o:
+	cd /home/georgia/Desktop/Hustle/CppND-Route-Planning-Project && $(MAKE) -f test/CMakeFiles/test.dir/build.make test/CMakeFiles/test.dir/utest_rp_a_star_stub.cpp.o
+.PHONY : utest_rp_a_star_stub.cpp.o
 
-utest_rm_find_closest_node.i: utest_rm_find_closest_node.cpp.i
+utest_rp_a_star_stub.i: utest_rp_a_star_stub.cpp.i
 
-.PHONY : utest_rm_find_closest_node.i
+.PHONY : utest_rp_a_star_stub.i
 
 # target to preprocess a source file
-utest_rm_find_closest_node.cpp.i:
-	cd /home/georgia/Desktop/Hustle/CppND-Route-Planning-Project && $(MAKE) -f test/CMakeFiles/test.dir/build.make test/CMakeFiles/test.dir/utest_rm_find_closest_node.cpp.i
-.PHONY : utest_rm_find_closest_node.cpp.i
+utest_rp_a_star_stub.cpp.i:
+	cd /home/georgia/Desktop/Hustle/CppND-Route-Planning-Project && $(MAKE) -f test/CMakeFiles/test.dir/build.make test/CMakeFiles/test.dir/utest_rp_a_star_stub.cpp.i
+.PHONY : utest_rp_a_star_stub.cpp.i
 
-utest_rm_find_closest_node.s: utest_rm_find_closest_node.cpp.s
+utest_rp_a_star_stub.s: utest_rp_a_star_stub.cpp.s
 
-.PHONY : utest_rm_find_closest_node.s
+.PHONY : utest_rp_a_star_stub.s
 
 # target to generate assembly for a file
-utest_rm_find_closest_node.cpp.s:
-	cd /home/georgia/Desktop/Hustle/CppND-Route-Planning-Project && $(MAKE) -f test/CMakeFiles/test.dir/build.make test/CMakeFiles/test.dir/utest_rm_find_closest_node.cpp.s
-.PHONY : utest_rm_find_closest_node.cpp.s
+utest_rp_a_star_stub.cpp.s:
+	cd /home/georgia/Desktop/Hustle/CppND-Route-Planning-Project && $(MAKE) -f test/CMakeFiles/test.dir/build.make test/CMakeFiles/test.dir/utest_rp_a_star_stub.cpp.s
+.PHONY : utest_rp_a_star_stub.cpp.s
 
 # Help Target
 help:
@@ -211,9 +211,9 @@ help:
 	@echo "... install/local"
 	@echo "... rebuild_cache"
 	@echo "... install"
-	@echo "... utest_rm_find_closest_node.o"
-	@echo "... utest_rm_find_closest_node.i"
-	@echo "... utest_rm_find_closest_node.s"
+	@echo "... utest_rp_a_star_stub.o"
+	@echo "... utest_rp_a_star_stub.i"
+	@echo "... utest_rp_a_star_stub.s"
 .PHONY : help
 
 

@@ -27,9 +27,9 @@ void Render::Display( io2d::output_surface &surface )
     DrawRailways(surface);
     DrawHighways(surface);
     DrawBuildings(surface);
-    // DrawPath(surface);
-    // DrawStartPosition(surface);
-    // DrawEndPosition(surface);
+    DrawPath(surface);
+    DrawStartPosition(surface);
+    DrawEndPosition(surface);
 }
 
 void Render::DrawPath(io2d::output_surface &surface) const{
@@ -146,7 +146,7 @@ io2d::interpreted_path Render::PathLine() const {
     return io2d::interpreted_path{pb};
 }
 
-io2d::interpreted_path Render::PathFromWay(const Model::Way &way) const {    
+io2d::interpreted_path Render::PathFromWay(const Model::Way &way) const {
     if( way.nodes.empty() )
         return {};
 
