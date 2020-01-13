@@ -1,11 +1,10 @@
-<<<<<<< HEAD
-=======
+
 # Route Planning Project
 
-This repo contains the starter code for the Route Planning project.
+A Simple C++ project which uses OpenStreetMap data stored on an xml file to show the shortest
+path between two points.
 
 <img src="map.png" width="600" height="450" />
->>>>>>> b42701f6a2beb50b978d1e2cb73ed22fb9e90a68
 
 ## Cloning
 
@@ -61,4 +60,3 @@ The testing executable is also placed in the `build` directory. From within `bui
 ```
 ./test
 ```
-
