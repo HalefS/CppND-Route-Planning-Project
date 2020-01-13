@@ -8,12 +8,20 @@ RouteModel::RouteModel(const std::vector<std::byte> &xml) : Model(xml) {
         m_Nodes.emplace_back(Node(counter, this, node));
         counter++;
     }
+<<<<<<< HEAD
     // Initialize the map
     CreateNodeToRoadHashMap();
 }
 
 
 void RouteModel::CreateNodeToRoadHashMap() {
+=======
+    CreateNodeToRoadHashmap();
+}
+
+
+void RouteModel::CreateNodeToRoadHashmap() {
+>>>>>>> b42701f6a2beb50b978d1e2cb73ed22fb9e90a68
     for (const Model::Road &road : Roads()) {
         if (road.type != Model::Road::Type::Footway) {
             for (int node_idx : Ways()[road.way].nodes) {
@@ -75,4 +83,8 @@ RouteModel::Node &RouteModel::FindClosestNode(float x, float y) {
     }
 
     return SNodes()[closest_idx];
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> b42701f6a2beb50b978d1e2cb73ed22fb9e90a68

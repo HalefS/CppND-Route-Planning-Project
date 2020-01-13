@@ -1,4 +1,5 @@
-#pragma once
+#ifndef ROUTE_MODEL_H
+#define ROUTE_MODEL_H
 
 #include <limits>
 #include <cmath>
@@ -43,9 +44,16 @@ class RouteModel : public Model {
     std::unordered_map<int, std::vector<const Model::Road*> > &GetNodeToRoadMap() { return node_to_road;}
     RouteModel::Node &FindClosestNode(float x, float y);
 
+    RouteModel(const std::vector<std::byte> &xml);
+    Node &FindClosestNode(float x, float y);
+    auto &SNodes() { return m_Nodes; }
+    std::vector<Node> path;
+
   private:
-    // Add private RouteModel variables and methods here.
+    void CreateNodeToRoadHashmap();
+    std::unordered_map<int, std::vector<const Model::Road *>> node_to_road;
     std::vector<Node> m_Nodes;
-    std::unordered_map<int, std::vector<const Model::Road*> > node_to_road;
 
 };
+
+#endif
