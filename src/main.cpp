@@ -10,7 +10,7 @@
 
 using namespace std::experimental;
 
-bool getCoordinates(float &start_x, float &start_y, float &end_x, float &end_y);
+bool EvaluateInput(std::vector<float>& input);
 
 static std::optional<std::vector<std::byte>> ReadFile(const std::string &path)
 {
@@ -52,20 +52,25 @@ int main(int argc, const char **argv)
             osm_data = std::move(*data);
     }
 
-    // TODO: Declare floats `start_x`, `start_y`, `end_x`, and `end_y` and get
-    // user input for these values using std::cin. Pass the user input to the
-    // RoutePlanner object below.
-    //float start_x, start_y, end_x, end_y;
-    //bool validInput = false;
-    //while (!validInput) {
-    //  validInput = getCoordinates(start_x, start_y, end_x, end_y);
-  //  }
+    float start_x, start_y, end_x, end_y;
+    std::cout << "Enter start_x :";
+    std::cin >> start_x;
+    std::cout << "Enter start_y: ";
+    std::cin >> start_y;
+    std::cout << "Enter end_x :";
+    std::cin >> end_x;
+    std::cout << "Enter end_y :";
+    std::cin >> end_y;
+    std::vector<float> user_input {start_x, start_y, end_x, end_y};
+    // Evaluate user input and terminate if the values are not valid
+    if(!EvaluateInput(user_input))
+      return 0;
 
     // Build Model.
     RouteModel model{osm_data};
 
     // Perform search and render results.
-    RoutePlanner route_planner{model, 10, 10, 90, 90};
+    RoutePlanner route_planner{model, start_x, start_y, end_x, end_y};
     route_planner.AStarSearch();
     std::cout << "Total distance from start_node to end_node is " << route_planner.GetDistance() << std::endl;
     Render render{model};
@@ -80,28 +85,12 @@ int main(int argc, const char **argv)
     display.begin_show();
 }
 
-bool getCoordinates(float &start_x, float &start_y, float &end_x, float &end_y) {
-  // get cordinates from the user
-  std::vector<float> coordinates{};
-  std::cout << "Please enter start_x :" << std::endl;
-  std::cin >> start_x;
-  std::cout << "Please enter start_y :" << std::endl;
-  std::cin >> start_y;
-  std::cout << "Please enter end_x :" << std::endl;
-  std::cin >> end_x;
-  std::cout << "Please enter end_y :" << std::endl;
-  std::cin >> end_y;
-  coordinates.push_back(start_x);
-  coordinates.push_back(start_y);
-  coordinates.push_back(end_x);
-  coordinates.push_back(end_y);
-  // Input validation
-  for(float &value : coordinates) {
+bool EvaluateInput(std::vector<float>& input) {
+  for(int value : input) {
     if(value < 0 || value > 100) {
-      std::cout << "Invalid coordinates, please enter values > 0 and < 100" << std::endl;
+      std::cout << "Invalid Input!!!! Please enter values from 0 to 100" << std::endl;
       return false;
     }
   }
-
   return true;
 }
