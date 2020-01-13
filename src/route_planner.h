@@ -7,15 +7,15 @@
 
 
 class RoutePlanner {
-  public:
+public:
     RoutePlanner(RouteModel &model, float start_x, float start_y, float end_x, float end_y);
     float GetDistance() {
-      return distance;
+        return distance;
     }
     void AStarSearch();
     void AddNeighbors(RouteModel::Node* currend_neighbor);
 
-  private:
+private:
     RouteModel &m_Model;
     RouteModel::Node* start_node;
     RouteModel::Node* end_node;
