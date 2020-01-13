@@ -39,10 +39,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/local/bin/cmake
+CMAKE_COMMAND = /snap/cmake/203/bin/cmake
 
 # The command to remove a file.
-RM = /usr/local/bin/cmake -E remove -f
+RM = /snap/cmake/203/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -59,19 +59,19 @@ CMAKE_BINARY_DIR = /home/georgia/Desktop/Hustle/CppND-Route-Planning-Project
 # Special rule for the target install/strip
 install/strip: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/local/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+	/snap/cmake/203/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip
 
 # Special rule for the target install/strip
 install/strip/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/local/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+	/snap/cmake/203/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/local/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/snap/cmake/203/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -92,19 +92,19 @@ list_install_components/fast: list_install_components
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/local/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+	/snap/cmake/203/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local
 
 # Special rule for the target install/local
 install/local/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/local/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+	/snap/cmake/203/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/local/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/snap/cmake/203/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -115,13 +115,13 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/local/bin/cmake -P cmake_install.cmake
+	/snap/cmake/203/bin/cmake -P cmake_install.cmake
 .PHONY : install
 
 # Special rule for the target install
 install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/local/bin/cmake -P cmake_install.cmake
+	/snap/cmake/203/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
 # The main all target
@@ -171,32 +171,32 @@ test/fast:
 	cd /home/georgia/Desktop/Hustle/CppND-Route-Planning-Project && $(MAKE) -f test/CMakeFiles/test.dir/build.make test/CMakeFiles/test.dir/build
 .PHONY : test/fast
 
-utest_rp_a_star_stub.o: utest_rp_a_star_stub.cpp.o
+utest_rp_a_star_search.o: utest_rp_a_star_search.cpp.o
 
-.PHONY : utest_rp_a_star_stub.o
+.PHONY : utest_rp_a_star_search.o
 
 # target to build an object file
-utest_rp_a_star_stub.cpp.o:
-	cd /home/georgia/Desktop/Hustle/CppND-Route-Planning-Project && $(MAKE) -f test/CMakeFiles/test.dir/build.make test/CMakeFiles/test.dir/utest_rp_a_star_stub.cpp.o
-.PHONY : utest_rp_a_star_stub.cpp.o
+utest_rp_a_star_search.cpp.o:
+	cd /home/georgia/Desktop/Hustle/CppND-Route-Planning-Project && $(MAKE) -f test/CMakeFiles/test.dir/build.make test/CMakeFiles/test.dir/utest_rp_a_star_search.cpp.o
+.PHONY : utest_rp_a_star_search.cpp.o
 
-utest_rp_a_star_stub.i: utest_rp_a_star_stub.cpp.i
+utest_rp_a_star_search.i: utest_rp_a_star_search.cpp.i
 
-.PHONY : utest_rp_a_star_stub.i
+.PHONY : utest_rp_a_star_search.i
 
 # target to preprocess a source file
-utest_rp_a_star_stub.cpp.i:
-	cd /home/georgia/Desktop/Hustle/CppND-Route-Planning-Project && $(MAKE) -f test/CMakeFiles/test.dir/build.make test/CMakeFiles/test.dir/utest_rp_a_star_stub.cpp.i
-.PHONY : utest_rp_a_star_stub.cpp.i
+utest_rp_a_star_search.cpp.i:
+	cd /home/georgia/Desktop/Hustle/CppND-Route-Planning-Project && $(MAKE) -f test/CMakeFiles/test.dir/build.make test/CMakeFiles/test.dir/utest_rp_a_star_search.cpp.i
+.PHONY : utest_rp_a_star_search.cpp.i
 
-utest_rp_a_star_stub.s: utest_rp_a_star_stub.cpp.s
+utest_rp_a_star_search.s: utest_rp_a_star_search.cpp.s
 
-.PHONY : utest_rp_a_star_stub.s
+.PHONY : utest_rp_a_star_search.s
 
 # target to generate assembly for a file
-utest_rp_a_star_stub.cpp.s:
-	cd /home/georgia/Desktop/Hustle/CppND-Route-Planning-Project && $(MAKE) -f test/CMakeFiles/test.dir/build.make test/CMakeFiles/test.dir/utest_rp_a_star_stub.cpp.s
-.PHONY : utest_rp_a_star_stub.cpp.s
+utest_rp_a_star_search.cpp.s:
+	cd /home/georgia/Desktop/Hustle/CppND-Route-Planning-Project && $(MAKE) -f test/CMakeFiles/test.dir/build.make test/CMakeFiles/test.dir/utest_rp_a_star_search.cpp.s
+.PHONY : utest_rp_a_star_search.cpp.s
 
 # Help Target
 help:
@@ -211,9 +211,9 @@ help:
 	@echo "... install/local"
 	@echo "... rebuild_cache"
 	@echo "... install"
-	@echo "... utest_rp_a_star_stub.o"
-	@echo "... utest_rp_a_star_stub.i"
-	@echo "... utest_rp_a_star_stub.s"
+	@echo "... utest_rp_a_star_search.o"
+	@echo "... utest_rp_a_star_search.i"
+	@echo "... utest_rp_a_star_search.s"
 .PHONY : help
 
 

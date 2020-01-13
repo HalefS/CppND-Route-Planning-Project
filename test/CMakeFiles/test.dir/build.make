@@ -34,10 +34,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/local/bin/cmake
+CMAKE_COMMAND = /snap/cmake/203/bin/cmake
 
 # The command to remove a file.
-RM = /usr/local/bin/cmake -E remove -f
+RM = /snap/cmake/203/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -57,22 +57,22 @@ include test/CMakeFiles/test.dir/progress.make
 # Include the compile flags for this target's objects.
 include test/CMakeFiles/test.dir/flags.make
 
-test/CMakeFiles/test.dir/utest_rp_a_star_stub.cpp.o: test/CMakeFiles/test.dir/flags.make
-test/CMakeFiles/test.dir/utest_rp_a_star_stub.cpp.o: test/utest_rp_a_star_stub.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/georgia/Desktop/Hustle/CppND-Route-Planning-Project/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object test/CMakeFiles/test.dir/utest_rp_a_star_stub.cpp.o"
-	cd /home/georgia/Desktop/Hustle/CppND-Route-Planning-Project/test && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/utest_rp_a_star_stub.cpp.o -c /home/georgia/Desktop/Hustle/CppND-Route-Planning-Project/test/utest_rp_a_star_stub.cpp
+test/CMakeFiles/test.dir/utest_rp_a_star_search.cpp.o: test/CMakeFiles/test.dir/flags.make
+test/CMakeFiles/test.dir/utest_rp_a_star_search.cpp.o: test/utest_rp_a_star_search.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/georgia/Desktop/Hustle/CppND-Route-Planning-Project/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object test/CMakeFiles/test.dir/utest_rp_a_star_search.cpp.o"
+	cd /home/georgia/Desktop/Hustle/CppND-Route-Planning-Project/test && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/utest_rp_a_star_search.cpp.o -c /home/georgia/Desktop/Hustle/CppND-Route-Planning-Project/test/utest_rp_a_star_search.cpp
 
-test/CMakeFiles/test.dir/utest_rp_a_star_stub.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/utest_rp_a_star_stub.cpp.i"
-	cd /home/georgia/Desktop/Hustle/CppND-Route-Planning-Project/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/georgia/Desktop/Hustle/CppND-Route-Planning-Project/test/utest_rp_a_star_stub.cpp > CMakeFiles/test.dir/utest_rp_a_star_stub.cpp.i
+test/CMakeFiles/test.dir/utest_rp_a_star_search.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/utest_rp_a_star_search.cpp.i"
+	cd /home/georgia/Desktop/Hustle/CppND-Route-Planning-Project/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/georgia/Desktop/Hustle/CppND-Route-Planning-Project/test/utest_rp_a_star_search.cpp > CMakeFiles/test.dir/utest_rp_a_star_search.cpp.i
 
-test/CMakeFiles/test.dir/utest_rp_a_star_stub.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/utest_rp_a_star_stub.cpp.s"
-	cd /home/georgia/Desktop/Hustle/CppND-Route-Planning-Project/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/georgia/Desktop/Hustle/CppND-Route-Planning-Project/test/utest_rp_a_star_stub.cpp -o CMakeFiles/test.dir/utest_rp_a_star_stub.cpp.s
+test/CMakeFiles/test.dir/utest_rp_a_star_search.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/utest_rp_a_star_search.cpp.s"
+	cd /home/georgia/Desktop/Hustle/CppND-Route-Planning-Project/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/georgia/Desktop/Hustle/CppND-Route-Planning-Project/test/utest_rp_a_star_search.cpp -o CMakeFiles/test.dir/utest_rp_a_star_search.cpp.s
 
 # Object files for target test
 test_OBJECTS = \
-"CMakeFiles/test.dir/utest_rp_a_star_stub.cpp.o"
+"CMakeFiles/test.dir/utest_rp_a_star_search.cpp.o"
 
 # External object files for target test
 test_EXTERNAL_OBJECTS = \
@@ -80,7 +80,7 @@ test_EXTERNAL_OBJECTS = \
 "/home/georgia/Desktop/Hustle/CppND-Route-Planning-Project/src/CMakeFiles/route_planner.dir/model.cpp.o" \
 "/home/georgia/Desktop/Hustle/CppND-Route-Planning-Project/src/CMakeFiles/route_planner.dir/route_model.cpp.o"
 
-build/test: test/CMakeFiles/test.dir/utest_rp_a_star_stub.cpp.o
+build/test: test/CMakeFiles/test.dir/utest_rp_a_star_search.cpp.o
 build/test: src/CMakeFiles/route_planner.dir/route_planner.cpp.o
 build/test: src/CMakeFiles/route_planner.dir/model.cpp.o
 build/test: src/CMakeFiles/route_planner.dir/route_model.cpp.o

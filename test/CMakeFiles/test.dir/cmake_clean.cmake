@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "../build/test"
   "../build/test.pdb"
-  "CMakeFiles/test.dir/utest_rp_a_star_stub.cpp.o"
+  "CMakeFiles/test.dir/utest_rp_a_star_search.cpp.o"
 )
 
 # Per-language clean rules from dependency scanning.

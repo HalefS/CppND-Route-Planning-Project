@@ -13,6 +13,7 @@ class RoutePlanner {
       return distance;
     }
     void AStarSearch();
+    void AddNeighbors(RouteModel::Node* currend_neighbor);
 
   private:
     RouteModel &m_Model;
@@ -20,4 +21,7 @@ class RoutePlanner {
     RouteModel::Node* end_node;
     float distance;
     std::vector<RouteModel::Node> ConstructFinalPath(RouteModel::Node* current_node);
+    float CalculateHValue(RouteModel::Node* otherNode);
+    std::vector<RouteModel::Node*> open_list;
+    RouteModel::Node* NextNode();
 };
